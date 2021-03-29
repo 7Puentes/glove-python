@@ -12,7 +12,7 @@ except ImportError:
 import numpy as np
 import scipy.sparse as sp
 import numbers
-import sys
+import tqdm
 
 from .glove_cython import fit_vectors, transform_paragraph
 
@@ -254,7 +254,7 @@ class Glove(object):
             print('Reading data')
 
         with io.open(filename, 'r', encoding='utf-8') as savefile:
-            if "tqdm" in sys.modules:
+            if verbose:
                 queue = tqdm(enumerate(savefile))
             else:
                 queue = enumerate(savefile)
