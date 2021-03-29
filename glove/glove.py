@@ -12,7 +12,7 @@ except ImportError:
 import numpy as np
 import scipy.sparse as sp
 import numbers
-import tqdm
+from tqdm import tqdm
 
 from .glove_cython import fit_vectors, transform_paragraph
 
